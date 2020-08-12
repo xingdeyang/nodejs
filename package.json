@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "my nodejs practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xingdeyang/nodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "practice"
+  ],
+  "author": "dy_xing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xingdeyang/nodejs/issues"
+  },
+  "homepage": "https://github.com/xingdeyang/nodejs#readme"
+}
