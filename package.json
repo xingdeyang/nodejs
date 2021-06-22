@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/xingdeyang/nodejs/issues"
   },
-  "homepage": "https://github.com/xingdeyang/nodejs#readme"
+  "homepage": "https://github.com/xingdeyang/nodejs#readme",
+  "dependencies": {
+    "puppeteer": "^10.0.0"
+  }
 }
