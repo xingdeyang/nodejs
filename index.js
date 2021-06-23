@@ -11,4 +11,5 @@ http.createServer(async function (req, res) {
     const content = await page.content()
     res.writeHead(200, {'Content-Type': 'text/html'})
     res.end(content)
+    await page.close()
 }).listen(3003)
