@@ -8,7 +8,7 @@ http.createServer(async function (req, res) {
         browser = await puppeteer.launch({
             headless: true,
             // root用户运行
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
         })
         const page = await browser.newPage()
         await page.setContent('<p style="color: red;">hello world</p>')
