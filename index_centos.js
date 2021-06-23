@@ -4,6 +4,7 @@ const puppeteer             = require('puppeteer')
 const browserFetcher        = puppeteer.createBrowserFetcher()
 let revisionInfo            = null
 
+// puppeteer v6.0.0 是843427
 browserFetcher.download('884014').then(data => {
     revisionInfo = data
 })
