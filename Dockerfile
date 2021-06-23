@@ -1,4 +1,4 @@
-FROM node:10.14.0
+FROM node:10.16.3
 COPY . /app
 WORKDIR /app
 RUN npm install --registry=https://registry.npm.taobao.org
