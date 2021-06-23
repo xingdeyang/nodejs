@@ -2,9 +2,14 @@ const http      = require('http')
 const puppeteer = require('puppeteer')
 
 http.createServer(async function (req, res) {
+    const browserFetcher = puppeteer.createBrowserFetcher()
+    const revisionInfo = await browserFetcher.download('884014')
     const browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox']
+        // root用户运行
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        // connect browser超时
+        executablePath: revisionInfo.executablePath
     })
     const page = await browser.newPage()
     await page.setContent('<p style="color: red;">hello world</p>')
