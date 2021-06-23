@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/xingdeyang/nodejs#readme",
   "dependencies": {
-    "puppeteer": "^10.0.0"
+    "puppeteer": "^6.0.0"
   }
 }
