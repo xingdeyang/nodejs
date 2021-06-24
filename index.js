@@ -5,11 +5,6 @@ let stream                  = require('stream')
 const browserFetcher        = puppeteer.createBrowserFetcher()
 let revisionInfo            = null
 
-// puppeteer v6.0.0 是843427
-browserFetcher.download('843427').then(data => {
-    revisionInfo = data
-})
-
 async function initBrowser () {
     try {
         browser = await puppeteer.launch({
@@ -23,7 +18,12 @@ async function initBrowser () {
         console.log(e)
     }
 }
-initBrowser()
+
+// puppeteer v6.0.0 是843427
+browserFetcher.download('843427').then(data => {
+    revisionInfo = data
+    initBrowser()
+})
 
 http.createServer(async function (req, res) {
     console.log('新请求进入')
