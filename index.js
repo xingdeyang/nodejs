@@ -7,7 +7,7 @@ async function initBrowser () {
     try {
         browser = await puppeteer.launch({
             headless: true,
-            // root用户运行
+            // root用户运行设置，内存限制取消
             args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
         })
     } catch (e) {
