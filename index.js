@@ -23,7 +23,7 @@ http.createServer(async function (req, res) {
     let page = null
     try {
         page = await browser.newPage()
-        const version = await page.browser().version()
+        const version = await browser.version()
         console.log(version)
         await page.goto('https://www.qq.com/')
         const pdfBuffer = await page.pdf()
