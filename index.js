@@ -22,7 +22,6 @@ http.createServer(async function (req, res) {
     let page = null
     try {
         page = await browser.newPage()
-        await page.setContent('<p style="color: red;">hello world</p>')
         await page.goto('https://www.qq.com/')
         const pdfBuffer = await page.pdf()
         let readStream = new stream.PassThrough()
