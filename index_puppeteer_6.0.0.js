@@ -2,21 +2,13 @@ const http                  = require('http')
 const puppeteer             = require('puppeteer')
 let browser                 = null
 let stream                  = require('stream')
-const browserFetcher        = puppeteer.createBrowserFetcher()
-let revisionInfo            = null
-
-// puppeteer v6.0.0 是843427
-browserFetcher.download('843427').then(data => {
-    revisionInfo = data
-})
 
 async function initBrowser () {
     try {
         browser = await puppeteer.launch({
             headless: true,
             // root用户运行设置，内存限制取消
-            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-            executablePath: revisionInfo.executablePath
+            args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
         })
     } catch (e) {
         console.log('puppeteer启动webview异常')

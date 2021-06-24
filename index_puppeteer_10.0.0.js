@@ -1,4 +1,4 @@
-// puppeteer 基于6.0.0, centos 7下运行正常
+// puppeteer 基于10.0.0, centos 7下运行正常
 const http                  = require('http')
 const puppeteer             = require('puppeteer')
 const browserFetcher        = puppeteer.createBrowserFetcher()
