@@ -1,6 +1,7 @@
 const http                  = require('http')
 const puppeteer             = require('puppeteer')
 let browser                 = null
+let stream                  = require('stream')
 
 async function initBrowser () {
     try {
@@ -22,9 +23,11 @@ http.createServer(async function (req, res) {
     try {
         page = await browser.newPage()
         await page.setContent('<p style="color: red;">hello world</p>')
-        const content = await page.content()
-        res.writeHead(200, {'Content-Type': 'text/html'})
-        res.end(content)
+        await page.goto('https://www.qq.com/')
+        const pdfBuffer = await page.pdf()
+        let readStream = new stream.PassThrough()
+        readStream.end(pdfBuffer)
+        readStream.pipe(res)
     } catch (e) {
         console.log(e)
         res.writeHead(200, {'Content-Type': 'text/html'})
