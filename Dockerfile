@@ -1,5 +1,6 @@
 FROM node:10.16.3-alpine
 COPY . /app
+COPY font /usr/local/share/chinese
 WORKDIR /app
 RUN apk add --no-cache \
       chromium \
